@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "replaceme",
+	"version": "${version}",
+	"name": "Replace Me",
+	"description": "Replace Me",
+	"authors": [
+		],
+	"contact": {
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/replaceme/icon.png",
+	"environment": "*",
+	"entrypoints": {
+        "main": [
+
+        ],
+		"client": [
+			"com.replaceme.ReplaceMe"
+		]
+	},
+	"mixins": [
+		"replaceme.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": ">=1.21.9",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"accessWidener" : "replaceme.accesswidener"
+}
