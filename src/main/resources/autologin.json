@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "com.replaceme.mixin",
+    "package": "com.autologin.mixin",
     "compatibilityLevel": "JAVA_21",
     "mixins": [
 
