@@ -1,10 +1,13 @@
 package com.autologin;
 
+import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.minecraft.client.network.ClientCommandSource;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,22 +17,31 @@ import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.lit
 public class AutoLogin implements ClientModInitializer {
 	public static Logger LOGGER = LoggerFactory.getLogger("AutoLogin");
 
-    private static boolean sent = false;
+    private static volatile boolean checked = false;
     @Override
     public void onInitializeClient() {
         Config.load();
 
         ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
-            sent = false;
+            checked = false;
         });
 
         ClientTickEvents.END_CLIENT_TICK.register((client) -> {
-            if (sent) return;
+            if (checked) return;
             if (!Config.enabled) return;
             if (Config.password == null || Config.password.isEmpty()) return;
-            if (client.getNetworkHandler() == null) return;
-            client.getNetworkHandler().sendChatCommand("login " + Config.password);
-            sent = true;
+            ClientPlayNetworkHandler handler = client.getNetworkHandler();
+            if (handler == null) return;
+            CommandDispatcher<ClientCommandSource> dispatcher = handler.getCommandDispatcher();
+            if (dispatcher.getRoot().getChildren().isEmpty()) return;
+            checked = true;
+            if (dispatcher.getRoot().getChild("login") != null) {
+                handler.sendChatCommand("login " + Config.password);
+            }
+            else if (dispatcher.getRoot().getChild("l") != null){
+                handler.sendChatCommand("l " + Config.password);
+            }
+            else return;
         });
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
