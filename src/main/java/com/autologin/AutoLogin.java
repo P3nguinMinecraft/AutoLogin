@@ -3,6 +3,7 @@ package com.autologin;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,15 +13,23 @@ import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.lit
 
 public class AutoLogin implements ClientModInitializer {
 	public static Logger LOGGER = LoggerFactory.getLogger("AutoLogin");
+
+    private static boolean sent = false;
     @Override
     public void onInitializeClient() {
         Config.load();
 
         ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            sent = false;
+        });
+
+        ClientTickEvents.END_CLIENT_TICK.register((client) -> {
+            if (sent) return;
             if (!Config.enabled) return;
             if (Config.password == null || Config.password.isEmpty()) return;
-
-            handler.sendChatCommand("login " + Config.password);
+            if (client.getNetworkHandler() == null) return;
+            client.getNetworkHandler().sendChatCommand("login " + Config.password);
+            sent = true;
         });
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
