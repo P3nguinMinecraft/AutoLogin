@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Config {
-    public static final Path configFile = FabricLoader.getInstance().getConfigDir().resolve("mixin.autologin.json");
+    public static final Path configFile = FabricLoader.getInstance().getConfigDir().resolve("autologin.json");
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static final int CONFIG_VERSION = 2;
 
