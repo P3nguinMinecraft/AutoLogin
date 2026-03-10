@@ -3,7 +3,7 @@
 	"id": "autologin",
 	"version": "${version}",
 	"name": "Auto Login",
-	"description": "Automatically logs in for cracked minecraft servers using /login or your customizable command",
+	"description": "Automatically logs in for minecraft servers using /login or a customizable command",
 	"authors": [
         "Penguin"
 		],

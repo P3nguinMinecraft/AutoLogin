@@ -1,0 +1,44 @@
+# AutoLogin
+Automatically logs in for minecraft servers using /login or a customizable command
+
+**Fabric 1.19.2-1.21.11+**
+
+Get this mod on [Modrinth](https://modrinth.com/mod/autologin)!
+
+## Usage
+Automatically sends the login command when joining a server, if a password is set and the mod is toggled on.
+
+#### Base Command
+##### `/autologin`
+
+#### Subcommands
+
+##### `/autologin password set <password>`
+Sets your login password.
+
+##### `/autologin password get`
+Displays your currently saved password.
+
+##### `/autologin commands add <command>`
+Adds a command to the list of login commands the mod will attempt (e.g. `login`, `l`).
+
+##### `/autologin commands remove <command>`
+Removes a command from the login command list.
+
+##### `/autologin commands list`
+Lists all currently configured login commands.
+
+##### `/autologin toggle`
+Toggles the mod on or off. Requires a password to be set before enabling.
+
+## Dependencies
+Requires [FabricAPI](https://modrinth.com/mod/fabric-api)
+
+## Versions
+| Minecraft | AutoLogin |
+|-|-|
+| 1.19.2-1.21.11 | [1.1.0+1.21.11](tbd) |
+
+## Credits
+P3nguinMinecraft
+
