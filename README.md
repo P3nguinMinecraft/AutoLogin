@@ -32,7 +32,7 @@ Lists all currently configured login commands.
 Toggles the mod on or off. Requires a password to be set before enabling.
 
 ## Dependencies
-Requires [FabricAPI](https://modrinth.com/mod/fabric-api)
+Requires [Fabric API](https://modrinth.com/mod/fabric-api)
 
 Requires Java 21
 
