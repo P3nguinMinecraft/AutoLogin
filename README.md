@@ -34,6 +34,8 @@ Toggles the mod on or off. Requires a password to be set before enabling.
 ## Dependencies
 Requires [FabricAPI](https://modrinth.com/mod/fabric-api)
 
+Requires Java 21
+
 ## Versions
 | Minecraft | AutoLogin |
 |-|-|
