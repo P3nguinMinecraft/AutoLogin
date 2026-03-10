@@ -7,7 +7,7 @@ public class ChatUtils {
     public static void sendChatMessage(String message) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client != null) {
-            client.inGameHud.getChatHud().addMessage(Text.literal(message));
+            client.execute(() -> client.inGameHud.getChatHud().addMessage(Text.literal(message)));
         }
     }
 }
