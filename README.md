@@ -3,7 +3,8 @@ Automatically logs in for minecraft servers using /login or a customizable comma
 
 **Fabric 1.19.2-1.21.11+**
 
-Get this mod on [Modrinth](https://modrinth.com/mod/autologin)!
+<a href="https://modrinth.com/mod/auto-login">
+        <img alt="modrinth" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_vector.svg">
 
 ## Usage
 Automatically sends the login command when joining a server, if a password is set and the mod is toggled on.
