@@ -1,13 +1,11 @@
 package com.autologin;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 
 public class ChatUtils {
     public static void sendChatMessage(String message) {
-        MinecraftClient client = MinecraftClient.getInstance();
-        if (client != null) {
-            client.execute(() -> client.inGameHud.getChatHud().addMessage(Text.literal(message)));
-        }
+        Minecraft client = Minecraft.getInstance();
+        client.execute(() -> client.gui.getChat().addClientSystemMessage(Component.literal(message)));
     }
 }
