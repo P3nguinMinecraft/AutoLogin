@@ -39,7 +39,7 @@ Requires Java 21
 ## Versions
 | Minecraft | AutoLogin |
 |-|-|
-| 1.19.2-1.21.11 | [1.1.0+1.21.11](https://cdn.modrinth.com/data/qbvK7wHQ/versions/VxEv4to7/autologin-1.1.0%2B1.21.11.jar) |
+|1.19.2-1.21.11|[1.1.0+1.21.11](https://cdn.modrinth.com/data/qbvK7wHQ/versions/VxEv4to7/autologin-1.1.0%2B1.21.11.jar)|
 
 ## Credits
 P3nguinMinecraft
