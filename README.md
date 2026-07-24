@@ -1,7 +1,7 @@
 # AutoLogin
 Automatically logs in for minecraft servers using /login or a customizable command
 
-**Fabric 1.19.2-26.1.2+**
+**Fabric 1.19.2-26.2++**
 
 <a href="https://modrinth.com/mod/auto-login">
         <img alt="modrinth" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/available/modrinth_vector.svg">
@@ -41,7 +41,8 @@ Requires Java 21
 | Minecraft | AutoLogin |
 |-|-|
 |1.19.2-1.21.11|[1.1.0+1.21.11](https://cdn.modrinth.com/data/qbvK7wHQ/versions/VxEv4to7/autologin-1.1.0%2B1.21.11.jar)|
-|26.1-26.1.2+|[1.1.0+26.1](https://cdn.modrinth.com/data/qbvK7wHQ/versions/BmTDrgLX/autologin-1.1.0%2B26.1.jar)|
+|26.1-26.1.2|[1.1.0+26.1](https://cdn.modrinth.com/data/qbvK7wHQ/versions/BmTDrgLX/autologin-1.1.0%2B26.1.jar)|
+|26.2+|[1.1.0+26.2](https://cdn.modrinth.com/data/qbvK7wHQ/versions/rscvqq4C/autologin-1.1.0%2B26.2.jar)|
 
 ## Credits
 P3nguinMinecraft
